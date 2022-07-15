@@ -145,8 +145,8 @@ void XloggerAppender::Write(const XLoggerInfo* _info, const char* _log) {
 
     SCOPE_ERRNO();
 
-    thread_local uint32_t recursion_count = 0;
-    thread_local std::string recursion_str;
+    /* thread_local */ uint32_t recursion_count = 0;
+    /* thread_local */ std::string recursion_str;
     recursion_count++;
 
     if (consolelog_open_) ConsoleLog(_info,  _log);
@@ -949,7 +949,7 @@ const char* XloggerAppender::Dump(const void* _dumpbuffer, size_t _len) {
     SCOPE_ERRNO();
 
 
-    thread_local std::string buffer;
+    /* thread_local */ std::string buffer;
     if (!buffer.empty()) {
         buffer.clear();
     }
@@ -1226,7 +1226,7 @@ const char* xlogger_memory_dump(const void* _dumpbuffer, size_t _len) {
 
     SCOPE_ERRNO();
 
-    thread_local std::string buffer;
+    /* thread_local */ std::string buffer;
     if (!buffer.empty()) {
         buffer.clear();
     }

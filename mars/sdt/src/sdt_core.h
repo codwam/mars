@@ -40,6 +40,15 @@ class BaseChecker;
 class SdtCore {
   public:
     SINGLETON_INTRUSIVE(SdtCore, new SdtCore, delete);
+    
+    static SdtCore* getInstance() {
+        static SdtCore* ins;
+        if (ins == nullptr) {
+            ins = new SdtCore;
+        }
+        return ins;
+    }
+    virtual ~SdtCore();
 
   public:
 
@@ -52,7 +61,6 @@ class SdtCore {
 
   private:
     SdtCore();
-    virtual ~SdtCore();
 
     void __InitCheckReq(CheckIPPorts& _longlink_items, CheckIPPorts& _shortlink_items, int _mode, int _timeout);
     void __Reset();
