@@ -47,7 +47,7 @@ void StnCallBack::TrafficData(ssize_t _send, ssize_t _recv) {
     xdebug2(TSF"send:%_, recv:%_", _send, _recv);
 }
         
-std::vector<std::string> StnCallBack::OnNewDns(const std::string& _host) {
+std::vector<std::string> StnCallBack::OnNewDns(const std::string& _host, bool _longlink_host) {
     std::vector<std::string> vector;
 //    vector.push_back("118.89.24.72");
     vector.push_back("127.0.0.1");
@@ -85,7 +85,7 @@ int StnCallBack::Buf2Resp(uint32_t _taskid, void* const _user_context, const std
     return handle_type;
 }
 
-int StnCallBack::OnTaskEnd(uint32_t _taskid, void* const _user_context, const std::string& _user_id, int _error_type, int _error_code) {
+int  OnTaskEnd(uint32_t _taskid, void* const _user_context, const std::string& _user_id, int _error_type, int _error_code, const CgiProfile& _profile) {
     
     return (int)[[NetworkService sharedInstance] OnTaskEndWithTaskID:_taskid userContext:_user_context errType:_error_type errCode:_error_code];
 

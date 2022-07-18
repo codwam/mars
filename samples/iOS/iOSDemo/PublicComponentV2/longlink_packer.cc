@@ -151,6 +151,7 @@ longlink_noop_resp_body = [](const AutoBuffer& _body, const AutoBuffer& _extend)
 };
 
 longlink_noop_interval = []() -> uint32_t {
+//    return 0;
   return 30 * 1000;
 };
 

@@ -39,18 +39,10 @@ public:
     void OnPkgEvent(bool _is_firstpkg, int _span);
     void OnTaskEvent(const TaskProfile& _task_profile);
     bool IsLastValidConnectFail(int64_t &_span);
-    
-    static WeakNetworkLogic* getInstance() {
-        static WeakNetworkLogic* ins;
-        if (ins == nullptr) {
-            ins = new WeakNetworkLogic;
-        }
-        return ins;
-    }
-    virtual ~WeakNetworkLogic();
 
 private:
     WeakNetworkLogic();
+    virtual ~WeakNetworkLogic();
     void __SignalForeground(bool _is_foreground);
     void __ReportWeakLogic(int _key, int _value, bool _is_important);
     void __MarkWeak(bool _isWeak);

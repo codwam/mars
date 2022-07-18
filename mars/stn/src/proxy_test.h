@@ -42,18 +42,10 @@ class ProxyTest {
 public:
     SINGLETON_INTRUSIVE(ProxyTest, new ProxyTest, delete);
     bool ProxyIsAvailable(const mars::comm::ProxyInfo _proxy_info, const std::string& _host, const std::vector<std::string>& _hardcode_ips);
-    
-    static ProxyTest* getInstance() {
-        static ProxyTest* ins;
-        if (ins == nullptr) {
-            ins = new ProxyTest;
-        }
-        return ins;
-    }
-    ~ProxyTest();
 
 private:
     ProxyTest() {}
+    ~ProxyTest();
     
     SOCKET __Connect(const mars::comm::ProxyInfo& _proxy_info, const std::string& _host, const std::vector<std::string>& _hardcode_ips);
     int __ReadWrite(SOCKET _sock, const mars::comm::ProxyInfo& _proxy_info, const std::string& _host);

@@ -76,7 +76,8 @@
 		6D80DC7628810C28008B6142 /* libstn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5D5F76258C93F300370AAA /* libstn.a */; };
 		6D80DC7728810C28008B6142 /* libxlog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5D5F78258C93F300370AAA /* libxlog.a */; };
 		6D80DC7828810C29008B6142 /* libzstd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5D5F70258C93F300370AAA /* libzstd.a */; };
-		6D80DC88288113F9008B6142 /* mars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D80DC87288113F9008B6142 /* mars.framework */; };
+		6DC4E9272884F233002E6BF0 /* mars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC4E9262884F233002E6BF0 /* mars.framework */; };
+		6DC4E9292884F5AC002E6BF0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC4E9282884F5AC002E6BF0 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -288,7 +289,8 @@
 		4BDBD1491E07F611006C62F5 /* NetworkStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkStatus.h; path = Bussiness/NetworkStatus.h; sourceTree = "<group>"; };
 		4BDBD14A1E07F611006C62F5 /* NetworkStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkStatus.m; path = Bussiness/NetworkStatus.m; sourceTree = "<group>"; };
 		6D5D5F59258C93F300370AAA /* mars.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mars.xcodeproj; path = ../../../mars/cmake_build/iOS/mars.xcodeproj; sourceTree = "<group>"; };
-		6D80DC87288113F9008B6142 /* mars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mars.framework; sourceTree = "<group>"; };
+		6DC4E9262884F233002E6BF0 /* mars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mars.framework; sourceTree = "<group>"; };
+		6DC4E9282884F5AC002E6BF0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,10 +298,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DC4E9292884F5AC002E6BF0 /* CoreLocation.framework in Frameworks */,
 				6D80DC7128810C28008B6142 /* libapp.a in Frameworks */,
 				6D80DC7228810C28008B6142 /* libbaseevent.a in Frameworks */,
 				6D80DC7328810C28008B6142 /* libcomm.a in Frameworks */,
-				6D80DC88288113F9008B6142 /* mars.framework in Frameworks */,
+				6DC4E9272884F233002E6BF0 /* mars.framework in Frameworks */,
 				6D80DC7428810C28008B6142 /* libmars-boost.a in Frameworks */,
 				6D80DC7528810C28008B6142 /* libsdt.a in Frameworks */,
 				6D80DC7628810C28008B6142 /* libstn.a in Frameworks */,
@@ -403,6 +406,7 @@
 		1F7626C11E12BA69000A4AE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6DC4E9282884F5AC002E6BF0 /* CoreLocation.framework */,
 				4BD0096A21707FC4007FD5DB /* mars.framework */,
 				1F7626C21E12BA6A000A4AE6 /* protobuf.framework */,
 			);
@@ -521,7 +525,7 @@
 		1FB577321CE20C1900ADCF8C /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				6D80DC87288113F9008B6142 /* mars.framework */,
+				6DC4E9262884F233002E6BF0 /* mars.framework */,
 				1FB577871CE20FA300ADCF8C /* libresolv.9.tbd */,
 				1FB577851CE20F7D00ADCF8C /* SystemConfiguration.framework */,
 				1FB577811CE20F1400ADCF8C /* libz.tbd */,
@@ -651,7 +655,7 @@
 				TargetAttributes = {
 					1FB576ED1CE209A500ADCF8C = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 7G2X8H8PPE;
+						DevelopmentTeam = L8W42QLGJ8;
 						ProvisioningStyle = Automatic;
 					};
 					1FB577061CE209A500ADCF8C = {
@@ -974,7 +978,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7G2X8H8PPE;
+				DEVELOPMENT_TEAM = L8W42QLGJ8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -988,7 +992,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.mars;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.mars.codwam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
