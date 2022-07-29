@@ -21,6 +21,7 @@ xcshareddata
 /samples/iOS/XloggerSwiftDemo/Kernel/MarsLib/
 /samples/Mac/Kernel/MarsLib/
 /samples/android/xlogSample/app/src/main/jni/export_include/*.so
+/samples/iOS/iOSDemo/mars.framework/
 
 #!/mars/libraries/mars_android_sdk/
 /mars/app/win32proj/Debug/*.idb

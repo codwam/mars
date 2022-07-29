@@ -40,7 +40,8 @@
     self.tableView.delegate = self;
     
     converSations = [[NSArray alloc] init];
-    CGITask *convlstCGI = [[CGITask alloc] initAll:ChannelType_ShortConn AndCmdId:kConvLst AndCGIUri:@"/mars/getconvlist" AndHost:@"www.marsopen.cn"];
+//    CGITask *convlstCGI = [[CGITask alloc] initAll:ChannelType_ShortConn AndCmdId:kConvLst AndCGIUri:@"/mars/getconvlist" AndHost:@"www.marsopen.cn"];
+    CGITask *convlstCGI = [[CGITask alloc] initAll:ChannelType_ShortConn AndCmdId:kConvLst AndCGIUri:@"/mars/getconvlist" AndHost:@"127.0.0.1"];
     [[NetworkService sharedInstance] startTask:convlstCGI ForUI:self];
 }
 

@@ -38,9 +38,11 @@
     [super viewDidLoad];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        UIStoryboard *sb= [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        LoginViewController *lvc = [sb instantiateViewControllerWithIdentifier:@"LoginViewController"];
-        [self.tabBarController presentViewController:lvc animated:YES completion:nil];
+//        UIStoryboard *sb= [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        LoginViewController *lvc = [sb instantiateViewControllerWithIdentifier:@"LoginViewController"];
+//        [self.tabBarController presentViewController:lvc animated:YES completion:nil];
+        
+        [(AppDelegate *)[UIApplication sharedApplication].delegate setUsername:@"codwam"];
     });
 }
 
@@ -49,15 +51,19 @@
 }
 
 - (IBAction)onButtonClick:(id)sender forEvent:(UIEvent *)event {
-    CGITask *helloCGI = [[CGITask alloc] initAll:ChannelType_All AndCmdId:kSayHello AndCGIUri:@"/mars/hello" AndHost:@"www.marsopen.cn"];
+//    CGITask *helloCGI = [[CGITask alloc] initAll:ChannelType_All AndCmdId:kSayHello AndCGIUri:@"/mars/hello" AndHost:@"www.marsopen.cn"];
+    CGITask *helloCGI = [[CGITask alloc] initAll:ChannelType_All AndCmdId:kSayHello AndCGIUri:@"/mars/hello" AndHost:@"127.0.0.1"];
     [[NetworkService sharedInstance] startTask:helloCGI ForUI:self];
 }
 
 - (NSData*)requestSendData {
-    HelloRequest *helloRequest = [HelloRequest new];
-    helloRequest.user = [self username];
-    helloRequest.text = @"Hello world";
-    NSData *data = [helloRequest data];
+    __block NSData *data;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        HelloRequest *helloRequest = [HelloRequest new];
+        helloRequest.user = [self username];
+        helloRequest.text = @"Hello world";
+        data = [helloRequest data];
+    });
     return data;
 }
 
